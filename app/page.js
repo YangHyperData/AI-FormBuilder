@@ -1,101 +1,110 @@
-import Image from "next/image";
+"use client"
+import { AtomIcon, Edit, Share2 } from 'lucide-react'
+import { useRouter } from 'next/navigation'
+import React from 'react'
 
-export default function Home() {
+function Hero() {
+  const router = useRouter();
+  const handleClick = () => {
+    router.push('/dashboard');
+  };
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    // bg-[url('/grid.svg')]
+    <section className=" h-[500px] bg-[url('/grid.svg')]">
+      <div className="mx-auto max-w-screen-xl z-30 px-4 pt-32 lg:flex  ">
+        <div className="mx-auto max-w-xl text-center">
+          <h1 className="text-3xl font-extrabold sm:text-5xl" >
+            Create your Form
+            <strong className="font-extrabold text-primary sm:block"> In Seconds Not  in Hours </strong>
+          </h1>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          <p className="mt-4 sm:text-xl/relaxed text-gray-500">
+            Generate, publish and share your form right away with AI. Dive into insightful results, charts and analytics.
+          </p>
+
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <a
+              className="block w-full rounded bg-primary px-12 py-3 text-sm font-medium text-white shadow hover:bg-purple-600 focus:outline-none focus:ring active:bg-red-500 sm:w-auto"
+              href="/dashboard"
+            >
+              + Create AI Form
+            </a>
+
+            <a
+              className="block w-full rounded px-12 py-3 text-sm font-medium text-primary shadow hover:text-purple-600 focus:outline-none focus:ring active:text-red-500 sm:w-auto"
+              href="#"
+            >
+              Learn More
+            </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      </div>
+      {/* <img src='/grid.svg' className=' absolute w-full h-[400px] '/> */}
+      <section className="">
+        <div className="mx-auto max-w-screen-xl px-4 py-56 ">
+          <div className="mx-auto max-w-lg text-center">
+            <h2 className="text-3xl font-bold sm:text-4xl">How it Works</h2>
+
+            <p className="mt-4 text-gray-300">
+              Generate, publish and share your form right away with AI. Dive into insightful results, charts and analytics.
+            </p>
+          </div>
+
+          <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <a
+              className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
+              href="#"
+            >
+              <AtomIcon className='h-8 w-8' />
+
+              <h2 className="mt-4 text-xl font-bold text-black">Write promot for your form</h2>
+
+              <p className="mt-1 text-sm text-gray-600">
+                Would you like me to help you create a specific prompt for your form? Please provide more details about the purpose of your form and your target audience.
+              </p>
+            </a>
+
+            <a
+              className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
+              href="#"
+            >
+              <Edit className='h-8 w-8' />
+
+              <h2 className="mt-4 text-xl font-bold text-black">Edit Your form </h2>
+
+              <p className="mt-1 text-sm text-gray-600">
+                Would you like me to help you create a specific prompt for your form? Please provide more details about the purpose of your form and your target audience.
+              </p>
+            </a>
+
+            <a
+              className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
+              href="#"
+            >
+              <Share2 className='h-8 w-8' />
+
+              <h2 className="mt-4 text-xl font-bold text-black">Share & Start Accepting Responses</h2>
+
+              <p className="mt-1 text-sm text-gray-600">
+                The process may vary slightly depending on the platform you're using. However, most form builders will provide you with a link or embed code that you can share or embed to start accepting responses
+              </p>
+            </a>
+
+
+          </div>
+
+          <div className="mt-12 text-center">
+            <a
+              href="/sign-in"
+              className="inline-block rounded bg-pink-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-pink-700 focus:outline-none focus:ring focus:ring-yellow-400"
+            >
+              Get Started Today
+            </a>
+          </div>
+        </div>
+      </section>
+    </section>
+  )
 }
+
+export default Hero
